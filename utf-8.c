@@ -12,7 +12,7 @@ int main ()
 
     while (read(STDIN_FILENO, &c, 1) > 0 ) {
         if (c == '\n') {
-            /* Dump the output on this line */
+            /* Dump the output for this line */
             printf("%u\n", non_ascii_char_line);
             non_ascii_char_line = 0;
             continue;
@@ -28,7 +28,7 @@ int main ()
                     break;
                 }
             }
-            /* Trash the next skip_bytes */
+            /* Trash the next (skip_bytes - 1) bytes */
             while (--skip_bytes > 0) {
                 read(STDIN_FILENO, &c, 1);
             }
